@@ -1,1 +1,13 @@
-heeeee
+<h1>{{title}}</h1>
+
+<input #titleInput>
+<button (click)="setTitle(titleInput.value)">Change Title</button>
+
+<button (click)="toggleVisible()"></button>
+<div *ngIf="visible">Visible</div>
+
+<ul>
+    <li *ngFor="let user of users">
+        <app-user [info]="user"></app-user>
+    </li>
+</ul>
