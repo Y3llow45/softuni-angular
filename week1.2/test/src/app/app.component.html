@@ -8,6 +8,6 @@
 
 <ul>
     <li *ngFor="let user of users">
-        <app-user [info]="user"></app-user>
+        <app-user [info]="user" (delete)="deleteUserHandler($event)"></app-user>
     </li>
 </ul>

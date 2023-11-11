@@ -29,4 +29,7 @@ export class AppComponent {
   setTitle(newTitle:string) {
     this.title = newTitle;
   }
+  deleteUserHandler(user) {
+    this.users = this.users.filter(u => u !== user)
+  }
 }

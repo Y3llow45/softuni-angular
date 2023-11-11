@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit,Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-user',
@@ -7,5 +8,16 @@ import { Component, Input } from '@angular/core';
 })
 export class UserComponent {
   @Input('info') user?: { name: string, age: number };
-  
+  @Output() delete: EventEmitter<any> = new EventEmitter();
+  constructor() {
+    console.log('constructor')
+  }
+  ngOnInit() {
+    console.log('All inputs have been set!')
+    console.log(this.user)
+  }
+  deleteHandler() {
+    console.log('delete')
+  }
+
 }
