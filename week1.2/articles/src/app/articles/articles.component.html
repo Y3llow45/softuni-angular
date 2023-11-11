@@ -1,7 +1,5 @@
 <ul>
-    <li>
-        <app-article *ngFor="let a of articles"
-            [article]="a"
-            [articleDescription]="a.description" </app-article>
+    <li *ngFor="let a of articles">
+        <app-article [article]="a" ></app-article>
     </li>
 </ul>
