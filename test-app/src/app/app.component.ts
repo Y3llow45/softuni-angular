@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoService } from './todo.service';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'test-app';
+  todo = {
+    title: 'Hello'
+  }
 
-  constructor() {
+  constructor(todoService: TodoService) {
+    //console.log(todoService)
+    todoService.loadTodos();
     setTimeout(() => {
       this.title = 'changed-title'
-    }, 5000);
+      this.todo = {title: '123'}
+    }, 1000);
   }
 }

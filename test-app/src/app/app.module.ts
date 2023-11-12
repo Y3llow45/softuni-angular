@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
+import { TodoService } from './todo.service';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,19 @@ import { TodoComponent } from './todo/todo.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    TodoService,
+    // {
+    //   provide: TodoService,
+    //   useClass: TodoService
+    // }
+    // {
+    //   provide: TodoService,
+    //   useFactory: () => {
+    //     return new TodoService()
+    //   }
+    // }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
