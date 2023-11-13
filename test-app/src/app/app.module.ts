@@ -14,7 +14,6 @@ import { TodoService } from './todo.service';
     BrowserModule
   ],
   providers: [
-    TodoService,
     // {
     //   provide: TodoService,
     //   useClass: TodoService

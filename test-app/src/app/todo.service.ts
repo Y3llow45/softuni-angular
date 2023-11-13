@@ -1,10 +1,12 @@
-import { Injectable } from "@angular/core"
+import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class TodoService {
-    constructor(http: Http) {}
-    loadTodos() {
-        // this.http.get('')
-        console.log("todos...")
-    }
+  // constructor(http: Http) {
+
+  // }
+  // loadTodos() {
+  //   this.http.get('')
+  //   console.log('load todos...');
+  // }
 }
