@@ -6,7 +6,7 @@ import { AppModule } from './app/app.module';
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
 
-import { asyncScheduler, of } from 'rxjs'
+/*import { asyncScheduler, of } from 'rxjs'
 import { delay, tap, mergeMap } from 'rxjs/operators';
 
 //Promise.resolve(1).then(x => x + 1).then(console.log)
@@ -27,7 +27,7 @@ b.subscribe({
   next: (val) => console.log(val),
   error: err => console.error(err),
   complete: () => { console.log('complete'); }
-})
+})*/
 
 // setTimeout(() => {
 //   const subscription = b.subscribe(console.log);
