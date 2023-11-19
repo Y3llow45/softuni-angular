@@ -19,7 +19,7 @@ export class CausesService {
   }
 
   donate(amount: number) {
-    return this.http.put<ICause>(`http://localhost:3000/causes/${this.selectedCause._id}`, {
+    return this.http.put<ICause>(`http://localhost:3000/causes?_id=${this.selectedCause._id}`, {
       body: { collectedAmount: this.selectedCause.collectedAmount + amount }
     });
   }

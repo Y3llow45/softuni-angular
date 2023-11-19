@@ -1,5 +1,5 @@
 export interface ICause {
-    _id: string;
+    _id: number;
     cause: string;
     description: string;
     neededAmount: number;

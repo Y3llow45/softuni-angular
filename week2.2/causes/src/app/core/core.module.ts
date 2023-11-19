@@ -4,9 +4,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [NavigationComponent],
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   exports: [NavigationComponent]
 })
 export class CoreModule { }
