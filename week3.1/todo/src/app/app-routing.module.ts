@@ -1,26 +1,39 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { ListComponent as UserListComponent} from './user/list/list.component';
+import { Routes, RouterModule } from '@angular/router';
 import { ListComponent as TodoListComponent } from './todo/list/list.component';
+import { ListComponent as UserListComponent } from './user/list/list.component';
 import { UserComponent } from './user/user/user.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: TodoListComponent
+    redirectTo: 'todo'
+  },
+  {
+    path: 'todo',
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: '/todo/list'
+      },
+      {
+        path: 'list',
+        component: TodoListComponent
+      }
+    ]
   },
   {
     path: 'user',
-    redirectTo: 'user/list'
+    canActivate: [AuthGuard],
+    data: { roles: [] },
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule)
   },
   {
-    path: 'user/list',
-    component: UserListComponent
-  },
-  {
-    path: 'user/:id',
-    component: UserComponent
+    path: '**',
+    component: NotFoundComponent
   }
 ];
 
