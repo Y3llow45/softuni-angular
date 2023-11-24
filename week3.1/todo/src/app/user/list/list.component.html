@@ -1,10 +1,17 @@
-<div *ngIf="!users">
-    Loading...
-</div>
+<ng-template #loader let-test="test">
+  {{test}}
+  <div>Loading...</div>
+</ng-template>
 
-<ng-container *ngIf="!users">
-    <div *ngFor="let user of users">
-        <span>{{user.username}}</span>
-        <button (click)="selectUserHandler(user.id)">Select</button>
-    </div>
-</ng-container>
+<ng-template #list let-test="test">
+  {{test}}
+  <div *ngFor="let user of users">
+    <span>{{user.username}}</span>
+    <a [routerLink]="['/user', user.id]">Select</a>
+    <!-- <button (click)="selectUserHandler(user.id)">Select</button> -->
+  </div>
+</ng-template>
+
+<!-- <ng-container *ngIf="users then list; else loader;"></ng-container> -->
+
+<ng-container *ngTemplateOutlet="users ? list : loader; context: { test: 123 }"></ng-container>

@@ -9,18 +9,18 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ListComponent implements OnInit {
 
-  users!: any[];
+  users: any[];
 
   constructor(
     private userService: UserService,
     private router: Router,
-
+    private activatedRoute: ActivatedRoute
   ) {
-    
+    this.users = activatedRoute.snapshot.data['userList'];
   }
 
   ngOnInit() {
-    this.userService.loadUser().subscribe(users => this.users = users);
+    // this.userService.loadUser().subscribe(users => this.users = users);
   }
 
   selectUserHandler(userId: number) {
