@@ -13,6 +13,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CauseModule } from './cause/cause.module';
+import { UserRoutingModule } from './user/user-routing.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CauseModule } from './cause/cause.module';
     HttpClientModule,
     AppRoutingModule,
     CauseModule,
+    UserRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
