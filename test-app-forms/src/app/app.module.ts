@@ -6,6 +6,7 @@ import { HighlightDirective } from './highlight.directive';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { UuidValidatorDirective } from './uuid-validator.directive';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { UuidValidatorDirective } from './uuid-validator.directive';
     HighlightDirective,
     LoginComponent,
     UuidValidatorDirective,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
