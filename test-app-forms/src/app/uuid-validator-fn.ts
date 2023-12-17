@@ -1,6 +1,7 @@
 import { AbstractControl } from "@angular/forms";
 
-export function UuidValidatorFn (control: AbstractControl) {
-    return (control.value || !control.value.startsWith('00-')) ? (invalidUUID: true) : null;
-
-}//1:48:48
+export function UuidValidator (config?: string) {
+    return function UuidValidatorFn (control: AbstractControl) {
+        return (!control.value || !control.value.startsWith(config || '00-')) ? {invalidUUID: true} : null;
+    }
+}

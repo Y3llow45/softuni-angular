@@ -1,1 +1,15 @@
-<p>register works!</p>
+<form [formGroup]="form">
+    <div class="form-group">
+        <label for="uuid">Uuid</label>
+        <input id="uuid" type="text" formControlName="uuid">
+        <div *ngIf="uuidControl.touched && uuidControl.invalid" class="error">UUID is required</div>
+        {{uuidControl?.errors | json}}
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="text" formControlName="email">
+        <div *ngIf="emailControl.touched && emailControl.invalid" class="error">Email is required</div>
+    </div>
+</form>
+
+{{form}}
